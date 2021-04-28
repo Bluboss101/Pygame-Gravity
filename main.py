@@ -3,14 +3,14 @@ import pygame, sys, random
 pygame.init()
 pygame.font.init()
 
-screen = pygame.display.set_mode((500,500))
+screen = pygame.display.set_mode((1000,1000))
 pygame.display.set_caption('My Game')
 
 Player_Width = 32
 Player_Height = 32
 Starting_X = 500/2 - Player_Width
 Starting_Y = 15 + Player_Height
-Starting_Gravity = 0.8
+Starting_Gravity = 0.7
 Starting_Margin = Player_Height * 0.8
 
 Player_X = Starting_X
@@ -33,6 +33,7 @@ def draw_image(screen, image, X, Y):
 running = True
 
 while running:
+    pygame.time.clock.tick(60)
     screen.fill((255,255,255))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:           
